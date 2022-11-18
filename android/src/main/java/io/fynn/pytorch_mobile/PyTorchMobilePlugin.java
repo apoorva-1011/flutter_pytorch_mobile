@@ -130,14 +130,34 @@ public class PyTorchMobilePlugin implements FlutterPlugin, MethodCallHandler {
         final Tensor imageInputTensor = TensorImageUtils.bitmapToFloat32Tensor(bitmap,
                 mean, std);
 
-        final Tensor imageOutputTensor = imageModule.forward(IValue.from(imageInputTensor)).toTensor();
+        final Tensor[] imageOutputTensor = imageModule.forward(IValue.from(imageInputTensor)).toTensorList();
+        final Tensor colorOutTensor= imageOutputTensor[0];
+        final Tensor typeOutTensor= imageOutputTensor[1];
+        System.out.println("Tensor OP");
 
-        float[] scores = imageOutputTensor.getDataAsFloatArray();
+        System.out.println(imageOutputTensor.length);
 
-        ArrayList<Float> out = new ArrayList<>();
-        for(float f : scores){
-          out.add(f);
+        float[] typescores = typeOutTensor.getDataAsFloatArray();
+        float[] colorscores = colorOutTensor.getDataAsFloatArray();
+
+
+        ArrayList<Float> typeout = new ArrayList<>();
+        for(float f : typescores){
+          typeout.add(f);
         }
+
+        ArrayList<Float> colorout = new ArrayList<>();
+        for(float f : colorscores){
+          colorout.add(f);
+        }
+
+        ArrayList<ArrayList<Float>> out = new ArrayList<ArrayList<Float>>();
+        out.add(colorout);
+        out.add(typeout);
+
+        System.out.println(out);
+        System.out.println("out");
+
 
         result.success(out);
 
