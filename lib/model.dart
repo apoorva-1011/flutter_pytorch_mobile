@@ -26,16 +26,29 @@ class Model {
   }
 
   ///predicts image and returns the supposed label belonging to it
-  Future<String> getImagePrediction(
+  Future<List<String>> getImagePrediction(
       File image, int width, int height, String labelPath,
       {List<double> mean = TORCHVISION_NORM_MEAN_RGB,
-      List<double> std = TORCHVISION_NORM_STD_RGB}) async {
+        List<double> std = TORCHVISION_NORM_STD_RGB}) async {
     // Assert mean std
     assert(mean.length == 3, "mean should have size of 3");
     assert(std.length == 3, "std should have size of 3");
 
-    List<String> labels = await _getLabels(labelPath);
+    print(labelPath);
+    print("Apoorva");
+
+    List<String> colorLabels = await _getLabels(labelPath);
+    List<String> typeLabels = await _getLabels("assets/labels/type_labels.csv");
     List byteArray = image.readAsBytesSync();
+    // final List? prediction = await _channel.invokeListMethod("predictImage", {
+    //   "index": _index,
+    //   "image": byteArray,
+    //   "width": width,
+    //   "height": height,
+    //   "mean": mean,
+    //   "std": std
+    // });
+
     final List? prediction = await _channel.invokeListMethod("predictImage", {
       "index": _index,
       "image": byteArray,
@@ -44,15 +57,38 @@ class Model {
       "mean": mean,
       "std": std
     });
-    double maxScore = double.negativeInfinity;
-    int maxScoreIndex = -1;
-    for (int i = 0; i < prediction!.length; i++) {
-      if (prediction[i] > maxScore) {
-        maxScore = prediction[i];
-        maxScoreIndex = i;
+
+
+    print("object");
+    print(prediction);
+    double maxScoreColor = double.negativeInfinity;
+    double maxScoreType = double.negativeInfinity;
+
+    int maxScoreIndexColor = -1;
+    int maxScoreIndexType = -1;
+
+    List<String> outputList=[];
+
+    for(int i=0; i< prediction![0].length; i++){
+      if (prediction[0][i] > maxScoreColor) {
+        maxScoreColor = prediction[0][i];
+        maxScoreIndexColor = i;
       }
     }
-    return labels[maxScoreIndex];
+    for(int i=0; i< prediction![1].length; i++){
+      if (prediction[1][i] > maxScoreType) {
+        maxScoreType = prediction[1][i];
+        maxScoreIndexType = i;
+      }
+    }
+    outputList.add(colorLabels[maxScoreIndexColor]);
+    outputList.add(typeLabels[maxScoreIndexType]);
+
+    // if (prediction[i] > maxScore) {
+    //   maxScore = prediction[i];
+    //   maxScoreIndex = i;
+    // }
+    return outputList;
   }
 
   ///predicts image but returns the raw net output
