@@ -161,7 +161,7 @@ public class PyTorchMobilePlugin implements FlutterPlugin, MethodCallHandler {
         ArrayList<ArrayList<Float>> out = new ArrayList<ArrayList<Float>>();
         out.add(colorout);
         out.add(typeout);
-        out.add(validout);
+//        out.add(validout);
 
         System.out.println(out);
         System.out.println("out");

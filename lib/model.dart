@@ -83,7 +83,7 @@ class Model {
     }
     outputList.add(colorLabels[maxScoreIndexColor]);
     outputList.add(typeLabels[maxScoreIndexType]);
-    outputList.add(prediction![2][0]);
+    // outputList.add(prediction![2][0]);
     // if (prediction[i] > maxScore) {
     //   maxScore = prediction[i];
     //   maxScoreIndex = i;
