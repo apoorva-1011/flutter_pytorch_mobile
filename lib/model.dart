@@ -83,12 +83,10 @@ class Model {
     }
     outputList.add(colorLabels[maxScoreIndexColor]);
     outputList.add(typeLabels[maxScoreIndexType]);
-    outputList.add(prediction![2][0]);
-    // if (prediction[i] > maxScore) {
-    //   maxScore = prediction[i];
-    //   maxScoreIndex = i;
-    // }
-  return outputList;
+
+    if(prediction![2][0]>0)
+      return outputList;
+    else return ['Invalid','Invalid'];
   }
 
   ///predicts image but returns the raw net output
