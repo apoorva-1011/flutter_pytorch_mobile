@@ -7,9 +7,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bdf8586-548e-4208-9426-cbfb0addd736" name="Default Changelist" comment="Model customised with invalid output">
+    <list default="true" id="6bdf8586-548e-4208-9426-cbfb0addd736" name="Default Changelist" comment="Model customised with invalid output syntax">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/io/fynn/pytorch_mobile/PyTorchMobilePlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/io/fynn/pytorch_mobile/PyTorchMobilePlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669357700233</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Model customised with invalid output syntax">
+      <created>1669358104037</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669358104037</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Model customised with invalid output syntax">
+      <created>1669361152973</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669361152973</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +107,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Model customised" />
     <MESSAGE value="Model customised with invalid output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model customised with invalid output" />
+    <MESSAGE value="Model customised with invalid output syntax" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model customised with invalid output syntax" />
   </component>
 </project>
