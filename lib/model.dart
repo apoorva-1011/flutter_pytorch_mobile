@@ -84,7 +84,7 @@ class Model {
     outputList.add(colorLabels[maxScoreIndexColor]);
     outputList.add(typeLabels[maxScoreIndexType]);
 
-    if(prediction![2][0]>0)
+    if(prediction![2][0]>5.0)
       return outputList;
     else return ['Invalid','Invalid'];
   }
