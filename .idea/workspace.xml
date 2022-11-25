@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bdf8586-548e-4208-9426-cbfb0addd736" name="Default Changelist" comment="Model customised">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/io/fynn/pytorch_mobile/PyTorchMobilePlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/io/fynn/pytorch_mobile/PyTorchMobilePlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

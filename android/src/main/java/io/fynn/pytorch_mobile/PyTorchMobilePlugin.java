@@ -131,6 +131,7 @@ public class PyTorchMobilePlugin implements FlutterPlugin, MethodCallHandler {
                 mean, std);
 
         final Tensor[] imageOutputTensor = imageModule.forward(IValue.from(imageInputTensor)).toTensorList();
+        final Tensor validTensor=imageOutputTensor[2];
         final Tensor colorOutTensor= imageOutputTensor[0];
         final Tensor typeOutTensor= imageOutputTensor[1];
         System.out.println("Tensor OP");
@@ -139,6 +140,7 @@ public class PyTorchMobilePlugin implements FlutterPlugin, MethodCallHandler {
 
         float[] typescores = typeOutTensor.getDataAsFloatArray();
         float[] colorscores = colorOutTensor.getDataAsFloatArray();
+        float[] validscores = validTensor.getDataAsFloatArray();
 
 
         ArrayList<Float> typeout = new ArrayList<>();
@@ -151,9 +153,16 @@ public class PyTorchMobilePlugin implements FlutterPlugin, MethodCallHandler {
           colorout.add(f);
         }
 
+        ArrayList<Float> validout = new ArrayList<>();
+        for(float f : validscores){
+          validout.add(f);
+        }
+
         ArrayList<ArrayList<Float>> out = new ArrayList<ArrayList<Float>>();
         out.add(colorout);
         out.add(typeout);
+        out.add(validout)
+        out.add()
 
         System.out.println(out);
         System.out.println("out");
