@@ -96,8 +96,9 @@ NSMutableArray *modules = [[NSMutableArray alloc] init];
             }
             try {
                 NSArray<NSNumber*>* output  = [imageModule predictImage:input withWidth:width andHeight: height];
-                
-                result(output);
+                NSLog(output);
+
+                result(FlutterMethodNotImplemented);
             } catch (const std::exception& e) {
                 NSLog(@"PyTorchMobile: %s", e.what());
             }

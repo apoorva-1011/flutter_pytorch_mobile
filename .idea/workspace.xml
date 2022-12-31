@@ -8,10 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bdf8586-548e-4208-9426-cbfb0addd736" name="Default Changelist" comment="Model customised with invalid output syntax">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/io/fynn/pytorch_mobile/PyTorchMobilePlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/io/fynn/pytorch_mobile/PyTorchMobilePlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/PyTorchMobilePlugin.mm" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/PyTorchMobilePlugin.mm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,42 @@
       <option name="project" value="LOCAL" />
       <updated>1669361152973</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Model customised with invalid output syntax">
+      <created>1669361285318</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669361285318</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Model customised with invalid output syntax">
+      <created>1669362920018</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669362920018</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Model customised with invalid output syntax">
+      <created>1669366225103</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669366225103</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Model customised with invalid output syntax">
+      <created>1669366702773</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669366702773</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Model customised with invalid output syntax">
+      <created>1669367009052</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669367009052</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
