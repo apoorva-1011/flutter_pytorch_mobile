@@ -22,29 +22,73 @@
     return self;
 }
 
-- (NSArray<NSNumber*>*)predictImage:(void*)imageBuffer withWidth:(int)width andHeight:(int)height {
+- (NSArray *)predictImage:(void*)imageBuffer withWidth:(int)width andHeight:(int)height {
     try {
+
         at::Tensor tensor = torch::from_blob(imageBuffer, {1, 3, height, width}, at::kFloat);
         torch::autograd::AutoGradMode guard(false);
         at::AutoNonVariableTypeMode non_var_type_mode(true);
-        
-        at::Tensor outputTensor = _module.forward({tensor}).toTensor();
-        
-        float *floatBuffer = outputTensor.data_ptr<float>();
-        if(!floatBuffer){
+
+        auto opTensorList = _module.forward({tensor}).toTensorList();
+
+        at:: Tensor opColor=opTensorList[0];
+        at:: Tensor opType=opTensorList[1];
+        at:: Tensor opValid=opTensorList[2];
+
+/////////////////////////////////////////////////////////////
+
+        float *floatBufferColor = opColor.data_ptr<float>();
+        if(!floatBufferColor){
             return nil;
         }
-        
-        int prod = 1;
-        for(int i = 0; i < outputTensor.sizes().size(); i++) {
-            prod *= outputTensor.sizes().data()[i];  
+
+        int prodColor = 1;
+        for(int i = 0; i < opColor.sizes().size(); i++) {
+            prodColor *= opColor.sizes().data()[i];
         }
-        
-        NSMutableArray<NSNumber*>* results = [[NSMutableArray<NSNumber*> alloc] init];
-        for (int i = 0; i < prod; i++) {
-            [results addObject: @(floatBuffer[i])];   
+
+        NSMutableArray<NSNumber*>* resultsColor = [[NSMutableArray<NSNumber*> alloc] init];
+        for (int i = 0; i < prodColor; i++) {
+            [resultsColor addObject: @(floatBufferColor[i])];
         }
-        
+///////////////////////////////////////////////////////
+        float *floatBufferType = opType.data_ptr<float>();
+        if(!floatBufferType){
+            return nil;
+        }
+
+        int prodType = 1;
+        for(int i = 0; i < opType.sizes().size(); i++) {
+            prodType *= opType.sizes().data()[i];
+        }
+
+        NSMutableArray<NSNumber*>* resultsType = [[NSMutableArray<NSNumber*> alloc] init];
+        for (int i = 0; i < prodType; i++) {
+            [resultsType addObject: @(floatBufferType[i])];
+        }
+///////////////////////////////////////////////////////
+        float *floatBufferValid = opValid.data_ptr<float>();
+        if(!floatBufferValid){
+           return nil;
+        }
+
+        int prodValid = 1;
+        for(int i = 0; i < opValid.sizes().size(); i++) {
+           prodValid *= opValid.sizes().data()[i];
+        }
+
+        NSMutableArray<NSNumber*>* resultsValid = [[NSMutableArray<NSNumber*> alloc] init];
+        for (int i = 0; i < prodValid; i++) {
+           [resultsValid addObject: @(floatBufferValid[i])];
+        }
+        ///////////////////////////////////////////////////////
+        NSMutableArray *results = [[NSMutableArray alloc] init];
+        [results addObject: resultsColor];
+        [results addObject: resultsType];
+        [results addObject: resultsValid];
+
+        NSLog(@"PyTorchMobile: results %@",results);
+
         return [results copy];
     } catch (const std::exception& e) {
         NSLog(@"%s", e.what());
