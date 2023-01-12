@@ -76,14 +76,15 @@ class Model {
       if (prediction[0][i] > maxScoreColor) {
         maxScoreColor = prediction[0][i];
         maxScoreIndexColor = i;
-        confidentColorDn=exp(confidentColorDn+prediction[0][i]);
+        confidentColorDn=confidentColorDn+exp(prediction[0][i]);
       }
     }
     for(int i=0; i< prediction![1].length; i++){
       if (prediction[1][i] > maxScoreType) {
         maxScoreType = prediction[1][i];
         maxScoreIndexType = i;
-        confidentTypeDn=exp(confidentTypeDn+prediction[1][i]);
+        confidentTypeDn=confidentTypeDn+exp(prediction[1][i]);
+
       }
     }
     double confidentTypeNm = exp(prediction![1][maxScoreIndexType]);
@@ -94,8 +95,8 @@ class Model {
     print(confidentTypeNm/confidentTypeDn);
     print(confidentColorNm/confidentColorDn);
 
-    var confidenceType = ((confidentTypeNm/confidentTypeDn)*100).toStringAsFixed(2);
-    var confidenceColor = ((confidentColorNm/confidentColorDn)*100).toStringAsFixed(2);
+    String confidenceType = ((confidentTypeNm/confidentTypeDn)*100).toStringAsFixed(2);
+    String confidenceColor = ((confidentColorNm/confidentColorDn)*100).toStringAsFixed(2);
 
     outputList.add(colorLabels[maxScoreIndexColor]+' Accuracy: '+ confidenceColor);
     outputList.add(typeLabels[maxScoreIndexType] + ' Accuracy: '+ confidenceType);
