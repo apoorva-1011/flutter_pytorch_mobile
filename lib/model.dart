@@ -94,8 +94,11 @@ class Model {
     print(confidentTypeNm/confidentTypeDn);
     print(confidentColorNm/confidentColorDn);
 
-    outputList.add(colorLabels[maxScoreIndexColor]);
-    outputList.add(typeLabels[maxScoreIndexType]);
+    var confidenceType = (confidentTypeNm/confidentTypeDn).toString();
+    var confidenceColor = (confidentColorNm/confidentColorDn).toString();
+
+    outputList.add(colorLabels[maxScoreIndexColor]+'Accuracy: '+ confidenceColor);
+    outputList.add(typeLabels[maxScoreIndexType] + 'Accuracy: '+ confidenceType);
 
     if(prediction![2][0]>5.0)
       return outputList;
