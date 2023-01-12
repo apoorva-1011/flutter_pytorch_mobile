@@ -94,8 +94,8 @@ class Model {
     print(confidentTypeNm/confidentTypeDn);
     print(confidentColorNm/confidentColorDn);
 
-    var confidenceType = (confidentTypeNm/confidentTypeDn).toString();
-    var confidenceColor = (confidentColorNm/confidentColorDn).toString();
+    var confidenceType = ((confidentTypeNm/confidentTypeDn)*100).toStringAsFixed(2);
+    var confidenceColor = ((confidentColorNm/confidentColorDn)*100).toStringAsFixed(2);
 
     outputList.add(colorLabels[maxScoreIndexColor]+'Accuracy: '+ confidenceColor);
     outputList.add(typeLabels[maxScoreIndexType] + 'Accuracy: '+ confidenceType);
