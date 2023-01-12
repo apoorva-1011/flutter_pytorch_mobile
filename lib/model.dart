@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/services.dart';
 import 'package:pytorch_mobile/enums/dtype.dart';
@@ -68,19 +69,31 @@ class Model {
     int maxScoreIndexType = -1;
 
     List<String> outputList=[];
+    double confidentTypeDn=0.0;
+    double confidentColorDn=0.0;
 
     for(int i=0; i< prediction![0].length; i++){
       if (prediction[0][i] > maxScoreColor) {
         maxScoreColor = prediction[0][i];
         maxScoreIndexColor = i;
+        confidentColorDn=exp(confidentColorDn+prediction[0][i]);
       }
     }
     for(int i=0; i< prediction![1].length; i++){
       if (prediction[1][i] > maxScoreType) {
         maxScoreType = prediction[1][i];
         maxScoreIndexType = i;
+        confidentTypeDn=exp(confidentTypeDn+prediction[1][i]);
       }
     }
+    double confidentTypeNm = exp(prediction![1][maxScoreIndexType]);
+    double confidentColorNm = exp(prediction![0][maxScoreIndexColor]);
+
+
+    print("confidence");
+    print(confidentTypeNm/confidentTypeDn);
+    print(confidentColorNm/confidentColorDn);
+
     outputList.add(colorLabels[maxScoreIndexColor]);
     outputList.add(typeLabels[maxScoreIndexType]);
 

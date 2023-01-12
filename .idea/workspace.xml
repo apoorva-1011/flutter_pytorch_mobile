@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bdf8586-548e-4208-9426-cbfb0addd736" name="Default Changelist" comment="Model customised with invalid output syntax&#10;ios">
+    <list default="true" id="6bdf8586-548e-4208-9426-cbfb0addd736" name="Default Changelist" comment="Model customised for ios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/PyTorchMobilePlugin.mm" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/PyTorchMobilePlugin.mm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TorchBridge/TorchModule.mm" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/TorchBridge/TorchModule.mm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672476809426</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Model customised for ios">
+      <created>1672494428322</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672494428322</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Model customised for ios">
+      <created>1672494563707</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1672494563707</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +163,7 @@
     <MESSAGE value="Model customised with invalid output" />
     <MESSAGE value="Model customised with invalid output syntax" />
     <MESSAGE value="Model customised with invalid output syntax&#10;ios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model customised with invalid output syntax&#10;ios" />
+    <MESSAGE value="Model customised for ios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model customised for ios" />
   </component>
 </project>
