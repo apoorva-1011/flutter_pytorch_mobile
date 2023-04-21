@@ -101,6 +101,9 @@ class Model {
     outputList.add(colorLabels[maxScoreIndexColor]+' Accuracy: '+ confidenceColor);
     outputList.add(typeLabels[maxScoreIndexType] + ' Accuracy: '+ confidenceType);
 
+    outputList.add(colorLabels[maxScoreIndexColor]);
+    outputList.add(typeLabels[maxScoreIndexType]);
+
     if(prediction![2][0]>5.0)
       return outputList;
     else return ['Invalid','Invalid'];
