@@ -95,11 +95,11 @@ class Model {
     print(confidentTypeNm/confidentTypeDn);
     print(confidentColorNm/confidentColorDn);
 
-    String confidenceType = ((confidentTypeNm/confidentTypeDn)*100).toStringAsFixed(2);
-    String confidenceColor = ((confidentColorNm/confidentColorDn)*100).toStringAsFixed(2);
-
-    outputList.add(colorLabels[maxScoreIndexColor]+' Accuracy: '+ confidenceColor);
-    outputList.add(typeLabels[maxScoreIndexType] + ' Accuracy: '+ confidenceType);
+    // String confidenceType = ((confidentTypeNm/confidentTypeDn)*100).toStringAsFixed(2);
+    // String confidenceColor = ((confidentColorNm/confidentColorDn)*100).toStringAsFixed(2);
+    //
+    // outputList.add(colorLabels[maxScoreIndexColor]);
+    // outputList.add(typeLabels[maxScoreIndexType]);
 
     outputList.add(colorLabels[maxScoreIndexColor]);
     outputList.add(typeLabels[maxScoreIndexType]);
